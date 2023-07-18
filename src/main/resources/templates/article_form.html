@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/article/create}" method="post">
+    <div>
+        <input name="title" id="title">
+    </div>
+    <div>
+        <textarea name="content" id="content" cols="30" rows="10">
+        </textarea>
+    </div>
+    <button type="submit">저장하기</button>
+</form>
+</body>
+</html>

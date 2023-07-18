@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{|/article/create/${article.id}|}" th:object="${articleForm}" method="post" class="my-3">
+    <tr>
+        <td th:text="${article.content}"></td>
+    </tr>
+    <textarea sec:authorize="isAnonymous()" disabled th:text="${article.content}" class="form-control" >
+    </textarea>
+    <textarea sec:authorize="isAuthenticated()" th:txet="${article.content}" class="form-control" ></textarea>
+    <input type="submit" value="답변등록" class="btn btn-primary my-2">
+</form>
+</body>
+</html>

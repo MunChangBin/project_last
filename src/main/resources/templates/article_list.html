@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <tr th:each="article : ${articleList}">
+        <td>
+            <a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}" ></a>
+
+        </td>
+    </tr>
+</div>
+
+<a href="/user/create">
+  <button type="button">회원가입</button>
+</a>
+<a href="/article/create">
+    <button type="button">글등록</button>
+</a>
+<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+</body>
+</html>
