@@ -12,13 +12,13 @@ public class ArticleService {
     private final ArticleRepository articleRepository;
 
 
-    public void create(String title, String content, SiteUser user) {
-        Article article = new Article();
-        article.setTitle(title);
-        article.setContent(content);
-        article.setAuthor(user);
-        this.articleRepository.save(article);
-    }
+//    public void create(String title, String content, SiteUser user) {
+//        Article article = new Article();
+//        article.setTitle(title);
+//        article.setContent(content);
+//        article.setAuthor(user);
+//        this.articleRepository.save(article);
+//    }
 
     public List<Article> getList() {
         return this.articleRepository.findAll();

@@ -1,7 +1,9 @@
 package com.example.test11.Article;
 
+import com.example.test11.User.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,16 +33,16 @@ public class ArticleController {
         return "article_form";
     }
 
-    @PreAuthorize("isAuthenticated()")
-    @PostMapping("/article/create")
-    public String create(@Valid ArticleForm articleForm , BindingResult bindingResult, Principal principal){
-        if (bindingResult.hasErrors()) {
-            return"article_form";
-        }
-        SiteUser siteUser = this.userService.getUser(principal.getName());
-        this.articleService.create(articleForm.getTitle(),articleForm.getContent(),siteUser);
-        return "redirect:/article/list";
-    }
+//    @PreAuthorize("isAuthenticated()")
+//    @PostMapping("/article/create")
+//    public String create(@Valid ArticleForm articleForm , BindingResult bindingResult, Principal principal){
+//        if (bindingResult.hasErrors()) {
+//            return"article_form";
+//        }
+//        SiteUser siteUser = this.userService.getUser(principal.getName());
+//        this.articleService.create(articleForm.getTitle(),articleForm.getContent(),siteUser);
+//        return "redirect:/article/list";
+    //}
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/article/detail/{id}")
     public String detail(Model model,@PathVariable("id")Integer id){

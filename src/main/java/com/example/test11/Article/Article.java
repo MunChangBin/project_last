@@ -16,6 +16,6 @@ public class Article {
 
     private String content;
 
-    @ManyToOne
-    private SiteUser author;
+//    @ManyToOne
+//    private SiteUser author;
 }

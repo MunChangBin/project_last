@@ -2,8 +2,8 @@
   <h4>회원가입</h4>
 </div>
 </div>
-<form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
-  <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+<form th:action="@{/user/create}" th:object="${userCreateForm}" method="post">
+
   <div class="mb-3">
     <label for="email" class="form-label">이메일Id</label>
     <input type="email" th:field="*{email}" class="form-control">
